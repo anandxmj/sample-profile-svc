@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: profile
+  namespace: profiles
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts: 
+    - "*"
+    port:
+      name: appport
+      number: 9080
+      protocol: HTTP
+

@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+ name: profile-request-authentication
+ namespace: profiles
+spec:
+  selector:
+    matchLabels:
+      app: profile
+  jwtRules:
+  - issuer: "https://maritz-auth0poc.us.auth0.com/"
+    jwksUri: "https://maritz-auth0poc.us.auth0.com/.well-known/jwks.json"
